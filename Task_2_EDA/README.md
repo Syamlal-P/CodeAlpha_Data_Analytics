@@ -1,173 +1,125 @@
-📊 Task 2: Exploratory Data Analysis (EDA)
+# 📊 Task 2: Exploratory Data Analysis (EDA)
 
-CodeAlpha Data Analytics Internship – January 2026
+This task is part of the **CodeAlpha Data Analytics Internship (January 2026)**.
+The objective of Task-2 is to perform **Exploratory Data Analysis (EDA)** on a
+real-world dataset collected during **Task-1 (Web Scraping)**.
 
-📌 Objective
+The analysis focuses on understanding the structure, quality, and patterns
+within a **fashion product dataset**, which serves as the data foundation for
+an outfit recommendation system.
 
-The objective of Task 2 is to perform Exploratory Data Analysis (EDA) on the dataset collected in Task 1 (Data Collection & Web Scraping).
-This task focuses on understanding the dataset, identifying patterns and trends, detecting anomalies, validating assumptions, and uncovering meaningful insights using statistical analysis and visualizations.
+---
 
-EDA serves as a critical foundation for any data-driven system, especially for applications like fashion and outfit recommendation systems.
+## 🎯 Objectives of This Task
 
-📂 Dataset Description
+- Understand the structure and contents of the dataset
+- Identify data types and missing values
+- Perform basic data cleaning and preprocessing
+- Analyze price distribution and product characteristics
+- Visualize trends and patterns using charts and plots
+- Generate insights to support future analytics and recommendation logic
 
-Source: Public fashion-related web pages (scraped in Task 1)
+---
 
-Domain: Fashion & Apparel
+## 📁 Dataset Description
 
-Format: CSV
+The dataset was obtained via **web scraping** in Task-1 and contains
+information about fashion products.
 
-Nature: Structured dataset created specifically for analytics purposes
+### Columns Included:
+- `product_name` – Name of the clothing item
+- `category` – Product category (Fashion)
+- `price` – Product price (string with currency symbol)
+- `price_numeric` – Cleaned numeric price for analysis
+- `product_url` – Link to the product page
+- `image_url` – Product image URL
 
-Typical Attributes Include:
+Total records: **16 fashion products**
 
-Product / Item Name
+---
 
-Category (Shirt, Pant, Dress, etc.)
+## 🛠️ Tools & Libraries Used
 
-Brand
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-Price
+---
 
-Additional attributes depending on source availability
+## 📊 Analysis Performed
 
-📌 The dataset is custom-built to support analytics and recommendation-based use cases.
+### 1. Data Overview
+- Dataset shape and structure inspection
+- Data types and non-null value checks
+- Duplicate and missing value analysis
 
-🧠 Key Questions Explored
+### 2. Data Cleaning
+- Converted price values from string to numeric format
+- Verified data consistency across columns
 
-Before starting the analysis, the following business and analytical questions were framed:
+### 3. Exploratory Analysis
+- Category distribution analysis
+- Price distribution analysis
+- Boxplot to detect price spread and outliers
+- Text-based feature exploration (product name length)
 
-Which fashion category appears most frequently?
+---
 
-What is the overall price distribution of fashion items?
+## 📈 Visualizations Generated
 
-Do certain brands consistently have higher prices?
+The following visualizations were created and saved for reference:
 
-Are there missing, duplicate, or inconsistent values?
+- **Price Distribution Bar Chart**
+- **Category Distribution Bar Chart**
+- **Price Boxplot**
+- *(Optional)* Product Name Length Distribution
+- *(Optional)* Missing Values Visualization
 
-Are there any extreme price outliers?
+All visual outputs are available in the `visuals/` directory.
 
-How does price vary across different categories?
+---
 
-These questions guided the entire EDA process.
+## 📌 Key Insights
 
-🛠️ Tools & Technologies Used
+- All products belong to a single category (Fashion), ensuring dataset consistency
+- Prices show variation across products, indicating scope for budget-based filtering
+- No missing values detected in critical columns
+- Clean numeric pricing enables further statistical analysis and visualization
 
-Python
+---
 
-Pandas – data manipulation and analysis
+## 🚀 Relevance to Outfit Recommendation System
 
-NumPy – numerical operations
+This EDA helps establish a strong analytical foundation for:
+- Price-based outfit recommendations
+- Category-level filtering
+- Integration with visualization dashboards (Task-3)
+- Sentiment and text analysis (Task-4)
 
-Matplotlib – data visualization
+---
 
-Seaborn – statistical visualizations
-
-Jupyter Notebook – interactive analysis environment
-
-📁 Folder Structure
+## 📂 Folder Structure
 Task_2_EDA/
-│
 ├── data/
-│   ├── raw/
-│   │   └── fashion_dataset.csv
-│   └── processed/
-│       └── cleaned_fashion_data.csv
-│
+│ └── fashion_products.csv
 ├── notebooks/
-│   └── eda_fashion.ipynb
-│
+│ └── fashion_eda.ipynb
 ├── visuals/
-│   ├── category_distribution.png
-│   ├── price_analysis.png
-│   ├── brand_trends.png
-│   └── missing_values.png
-│
+│ ├── price_distribution.png
+│ ├── category_distribution.png
+│ └── price_boxplot.png
 ├── reports/
-│   └── EDA_Report.md
-│
+│ └── eda_summary.md
+├── README.md
 ├── requirements.txt
-│
-└── README.md
 
-📊 Analysis Performed
+---
 
-The following steps were carried out during EDA:
+## ✅ Task Status
 
-1️⃣ Data Understanding
-
-Dataset shape and structure
-
-Column names and data types
-
-Summary statistics
-
-2️⃣ Data Quality Checks
-
-Missing value detection
-
-Duplicate record identification
-
-Inconsistent category/brand names
-
-3️⃣ Trend & Pattern Analysis
-
-Category-wise frequency analysis
-
-Price distribution analysis
-
-Brand-level price comparisons
-
-4️⃣ Anomaly Detection
-
-Identification of extreme price values
-
-Detection of abnormal records
-
-5️⃣ Data Visualization
-
-Bar charts for category distribution
-
-Histograms and box plots for price analysis
-
-Visual representation of missing values
-
-All visual outputs are saved inside the visuals/ directory.
-
-📈 Key Insights (Summary)
-
-Certain fashion categories dominate the dataset, indicating higher availability or demand.
-
-Price distribution shows both affordable and premium segments.
-
-Some brands consistently fall into higher price ranges.
-
-A small number of missing and inconsistent values were identified and addressed.
-
-Outliers were detected, emphasizing the importance of data cleaning before modeling.
-
-(Detailed insights are documented in reports/EDA_Report.md)
-
-⚠️ Data Issues Identified
-
-Missing values in selected attributes
-
-Price outliers
-
-Minor inconsistencies in category naming
-
-These issues were documented and addressed to prepare the dataset for further analysis or modeling tasks.
-
-🔮 Relevance to Future Tasks
-
-The insights from this EDA:
-
-Help refine feature selection
-
-Support recommendation logic
-
-Improve data-driven decision-making
-
-Prepare the dataset for advanced analytics or machine learning
-
-This task acts as a bridge between raw data collection and intelligent system development.
+✔ Task-2 completed successfully  
+✔ Meets all CodeAlpha EDA criteria  
+✔ Ready for submission and further tasks
